@@ -1,0 +1,9 @@
+
+
+build:
+  script:
+  - apt update
+  - apt install -y sudo make
+  - make install_buildenv
+  - make
+  - cat /builds/nodiscc/debian-live-config/chroot/debootstrap/debootstrap.log
