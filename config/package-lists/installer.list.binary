@@ -1,9 +1,16 @@
 # These packages are required by the installer to install the system in UEFIM boot mode
+#if ARCHITECTURES amd64
 grub-efi-amd64-bin
 grub-efi-amd64
 grub-efi-amd64-signed
+#endif
 mokutil
 shim-unsigned
+#if ARCHITECTURES amd64
 shim-helpers-amd64-signed
+#endif
+#if ARCHITECTURES i386
+shim-helpers-i386-signed
+#endif
 shim-signed-common
 shim-signed
