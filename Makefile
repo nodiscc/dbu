@@ -18,11 +18,11 @@ install_buildenv:
 # clear all caches, only required when changing the mirrors/architecture config
 clean:
 	sudo lb clean --all
-	sudo git clean -di
+	make -f Makefile.extra clean
 
 bump_version:
 	@last_tag=$$(git tag | tail -n1); \
-	echo "Please set version to $$last_tag in Makefile config/bootloaders/isolinux/live.cfg.in config/bootloaders/isolinux/menu.cfg auto/config doc/md/download-and-installation.md"
+	echo "Please set version to $$last_tag in Makefile config/bootloaders/isolinux/live.cfg.in config/bootloaders/isolinux/menu.cfg auto/config doc/md/download-and-installation.md doc/md/index.md"
 
 build:
 	# Build the live system/ISO image
@@ -67,7 +67,7 @@ test_imagesize:
 
 test_kvm_bios:
 	# Run the resulting image in KVM/virt-manager (legacy BIOS mode)
-	sudo virt-install --name dlc-test-i386 --boot cdrom --video virtio --disk path=$$PWD/dlc-test-i386-disk0.qcow2,format=qcow2,size=20,device=disk,bus=virtio,cache=none --cdrom 'iso/dlc-2.2.4-debian-buster-i386.hybrid.iso' --memory 2048 --vcpu 2
+	sudo virt-install --name dlc-test-i386 --boot cdrom --video virtio --disk path=$$PWD/dlc-test-i386-disk0.qcow2,format=qcow2,size=20,device=disk,bus=virtio,cache=none --cdrom 'iso/dlc-2.2.5-debian-buster-i386.hybrid.iso' --memory 2048 --vcpu 2
 	sudo virsh destroy dlc-test-i386
 	sudo virsh undefine dlc-test-i386
 	sudo rm $$PWD/dlc-test-i386-disk0.qcow2
@@ -75,7 +75,7 @@ test_kvm_bios:
 test_kvm_uefi:
 	# Run the resulting image in KVM/virt-manager (UEFI mode)
 	# UEFI support must be enabled in QEMU config for EFI install tests https://wiki.archlinux.org/index.php/Libvirt#UEFI_Support (/usr/share/OVMF/*.fd)
-	sudo virt-install --name dlc-test-i386 --boot loader=/usr/share/OVMF/OVMF_CODE.fd --video virtio --disk path=$$PWD/dlc-test-i386-disk0.qcow2,format=qcow2,size=20,device=disk,bus=virtio,cache=none --cdrom 'iso/dlc-2.2.4-debian-buster-i386.hybrid.iso' --memory 2048 --vcpu 2
+	sudo virt-install --name dlc-test-i386 --boot loader=/usr/share/OVMF/OVMF_CODE.fd --video virtio --disk path=$$PWD/dlc-test-i386-disk0.qcow2,format=qcow2,size=20,device=disk,bus=virtio,cache=none --cdrom 'iso/dlc-2.2.5-debian-buster-i386.hybrid.iso' --memory 2048 --vcpu 2
 	sudo virsh destroy dlc-test-i386
 	sudo virsh undefine dlc-test-i386
 	sudo rm $$PWD/dlc-test-i386-disk0.qcow2

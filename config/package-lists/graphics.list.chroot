@@ -38,11 +38,13 @@ create-resources
 gimp-help-fr
 #Alt: krita
 #pinta #stretch only
+#Alt: drawing
 #Alt: mypaint
 #Alt: mtpaint
 #Alt: xpaint
 #Alt: gnome-paint
 #Alt: delaboratory
+
 
 #Section: Vector editors
 #Description: inkscape
@@ -67,6 +69,7 @@ xournal
 
 #Section: Color pickers
 #gcolor2 #stretch only
+#gcolor3 #bullseye only
 #agave #stretch only
 #Alt: gpick
 
@@ -145,6 +148,7 @@ blender
 #Alt: voctomix
 #Alt: stopmotion
 #Alt: education-video
+#Alt: slowmovideo
 
 #Section: Command-line image manipulation
 imagemagick

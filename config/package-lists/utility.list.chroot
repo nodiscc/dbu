@@ -158,8 +158,8 @@ xfce4-notes
 
 
 #Section: Maps
-#Description: gnome-maps
-gnome-maps
+##Description: gnome-maps
+#Alt: gnome-maps
 #Alt: marble-qt
 #alt: marble-plugins
 #Alt: geoclue-2.0
@@ -303,6 +303,7 @@ gnome-audio
 #Alt: faenza-icon-theme
 #Alt: clearlooks-phenix-theme
 #Alt: deepin-icon-theme
+#paper-icon-theme #bullseye only
 
 #Section: Virtual keyboards
 #Alt: onboard

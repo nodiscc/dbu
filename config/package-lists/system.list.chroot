@@ -34,6 +34,7 @@ vrms
 #Alt: packagekit-command-not-found
 #Alt: packagekit-gtk3-module
 #Alt: pk-update-icon
+#Alt: extrepo
 
 #Section: Task management/monitoring
 #Description: xfce4-taskmanager
@@ -117,6 +118,10 @@ xorriso
 #Alt: forensics-full
 #Alt: steghide
 #Alt: gdmap
+#Alt: clonezilla
+#exfatprogs #bullseye only
+#crazydiskinfo #bullseye only
+#disk-filltest #bullseye only
 
 
 #Section: data recovery
@@ -234,6 +239,7 @@ libpam-tmpdir
 sudo
 #Alt: apparmor-notify
 #Alt: apparmor-profiles-extra
+#bdoas # bullseye only
 
 #Section: Time
 chrony
